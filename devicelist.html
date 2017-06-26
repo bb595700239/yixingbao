@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>易行保设备列表</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/swiper.min.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+    <script type="text/javascript" src="assets/js/dialog.js"></script>
+    <script type="text/javascript" src="assets/js/mobile.js"></script>
+</head>
+<body>
+<!-- 弹窗开始 -->
+<!-- 修改弹窗 -->
+<section class="mask" id="mask1" style="top:-100%;">
+    <section class="pupwindow ">
+        <a class="shanchu"><img class="shanchuimg" src="assets/images/shanchu.png"/></a>
+        <p class="puptit">编辑设备</p>
+        <p class="puplabel">序列号</p>
+        <section class="pupinput">
+            <input class="serialnumber"  value="" id="serialnumber"/>
+        </section>
+        <p class="puplabel">档次电压</p>
+        <ul class="pupvoltage">
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage1"/><label class="voltagechosse" for="voltage1">48V</label></li>
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage2"/><label class="voltagechosse" for="voltage2">60V</label></li>
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage3"/><label class="voltagechosse" for="voltage3">72V</label></li>
+        </ul>
+        <p class="puplabel">设备名</p> 
+        <section class="pupinput">
+            <input class="devicename"   id="devicename"  value="" />
+            <a class="qingkong">
+                <img src="assets/images/shanchu2@2x.png"/>
+            </a>
+        </section>
+        <section class="pupbottom">
+            <a  id="pupdelete" class="pupcencel fl-left"><img class="pupcencel-icon" src="assets/images/rabbish.png" />删除设备</a>
+            <a class="pupconfirm fl-left" id="pupchange" ><img class="pupconfirm-icon" src="assets/images/querenxiugai.png" />确认修改</a>
+        </section>
+    </section>
+</section>
+<!-- 添加弹窗 -->
+<section class="mask" id="mask2" style="top:-100%;">
+    <section class="pupwindow ">
+        <a class="shanchu"><img  class="shanchuimg" src="assets/images/shanchu.png"/></a>
+        <p class="puptit">添加设备</p>
+        <p class="puplabel"><i class="red">*</i>设备序列号</p>
+        <section class="pupinput">
+            <input class="serialnumber" placeholder="请输入设备序列号" id="addserialnumber" />
+        </section>
+        <p class="puplabel"><i class="red">*</i>档次电压</p>
+        <ul class="pupvoltage">
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage4"/><label class="voltagechosse" for="voltage4">48V</label></li>
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage5"/><label class="voltagechosse" for="voltage5">60V</label></li>
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage6"/><label class="voltagechosse" for="voltage6">72V</label></li>
+        </ul>
+        <p class="puplabel">设备名称</p>  
+        <section class="pupinput">
+        <input class="devicename" placeholder="请输入设备名称" id="adddevicename" />
+        </section>
+        <section class="pupbottom">
+            <!-- <a id="pupcencel" class="pupcencel fl-left">取消</a> -->
+            <a id="pupadd" class="pupadd">确认</a>
+        </section>
+    </section>
+</section>
+
+<!-- 弹窗结束 -->
+<div class="fixed-bottom">
+<div id="touchBcontainer">
+<ul class="devicelist" id="ltem-pro">
+        <li class="device-item">
+            <section class="fl-left dev-left">
+                <p class="dev-name">设备名：<span class="deviceName">のe电动车1</span></p>
+                <p class="dev-num">序列号:<span>32dajhg23845</span></p>
+            </section>
+            <section class="fl-right clearfix dev-right">
+                <a class="fl-left edit"><img src="assets/images/bianji.png"/></a>
+                <label class="devlabel">
+                    <input  type="radio" name="devicenchoose" class="switch" checked="checked"  value="のe电动车1" />
+                    <span class="decheck"></span>
+                </label>
+                
+            </section>
+        </li>
+        <li class="device-item">
+            <section class="fl-left dev-left">
+                <p class="dev-name">设备名：<span class="deviceName">のe电动车2</span></p>
+                <p class="dev-num">序列号:<span>32dajhg2</span></p>
+            </section>
+            <section class="fl-right clearfix dev-right">
+                <a class="fl-left edit"><img src="assets/images/bianji.png"/></a>
+                 <label class="devlabel">
+                    <input  type="radio" name="devicenchoose" class="switch" value="のe电动车2"/>
+                    <span class="decheck"></span>
+                </label>
+            </section>
+        </li>
+        <li class="device-item" >
+            <section class="fl-left dev-left">
+                <p class="dev-name">设备名：<span class="deviceName">のe电动车3</span></p>
+                <p class="dev-num">序列号:<span>32dajhg23845</span></p>
+            </section>
+            <section class="fl-right clearfix dev-right">
+                <a class="fl-left edit"><img src="assets/images/bianji.png"/></a>                    
+                <label class="devlabel">
+                    <input type="radio" name="devicenchoose"  class="switch" value="のe电动车3" />
+                    <span class="decheck"></span>
+                </label>
+            </section>
+        </li>    
+</ul> 
+<section class="addbottom">
+            <a class="add">
+                <img  src="assets/images/tianjia.png"/>
+                <span>添加设备</span>       
+            </a>
+        </section>
+</div>
+</div>
+<script type="text/javascript">
+$('#pupadd').click(function(){//添加设备
+    $('.mask').css('top','-100%');
+    var addname=$('#adddevicename').val();
+    var addnumber=$('#addserialnumber').val();
+    $.ajax({
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/ev/saveDeviceUser.json',
+        type:'post',
+        data:{userId:5,deviceMark:addnumber,deviceName:addname},
+        success:function(data){
+            var $li_1
+            $.each(data.deviceUserBackListDTO,function(i,item){
+            $li_1=`<li class="device-item" data-duid="${item.deviceUserId}">
+            <section class="fl-left dev-left">
+                <p class="dev-name">设备名：<span>${item.deviceName}</span></p>
+                <p class="dev-num">序列号：<span>${item.deviceMark}</span></p>
+            </section>
+            <section class="fl-right clearfix dev-right">
+                <a class="fl-left edit"><img src="assets/images/bianji.png"/></a>
+                <label class="devlabel">
+                    <input  type="radio" name="devicenchoose" class="switch" ${item.isIndexDevice?'checked':''} value="${item.deviceUserId}" />
+                    <span class="decheck"></span>
+                </label>
+            </section>
+        </li>`})
+        $('.devicelist').append($li_1);  
+        }
+    })     
+});
+$('.add').click(function(){ 
+    $('#mask2').css('top','0px');
+    $('.shanchu').click(function(){
+       $('.mask').css('top','-100%');
+    });
+})
+// 事件委托  修改和切换
+$('body').on({//修改
+    'click':function(){    
+    $('#mask1').css('top','0px');
+    var yname=$(this).parent().prev().find('.dev-name span').html();//获取未修改之前的的值
+    var ynumber=$(this).parent().prev().find('.dev-num span').html();
+    // var yyname=$(this).parents('li').data('deviceName')
+    var duid=$(this).parents('li').data('duid')
+    $('#devicename').val(yname);
+    $('#serialnumber').val(ynumber);
+    $('.shanchu').click(function(){
+        $('.mask').css('top','-100%');
+    });
+    $('.qingkong').click(function(){//清空之前的设备名称
+        $("#devicename").val('');
+    });
+    var $this=$(this);
+// console.log($('#pupchange'))
+ $('#pupchange')[0].onclick=function(){
+    var name=$('#devicename').val();
+    $.ajax({   
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/ev/updateDeviceUser.json',
+        type:'post',
+        data:{userId:5,deviceUserId:duid,deviceName:name},
+        success:function(data){
+            $this.parent().prev().find('.dev-name span').html(name);
+            $('.mask').css('top','-100%')
+        },
+        error:function(){$.alert('系统繁忙，请稍后再试');}
+    })
+ }
+$('#pupdelete')[0].onclick=function(){
+    $.ajax({
+        url:'http://10.221.204.100:8080/SmartEv/rest/ev/deleteDeviceUser.json',
+        type:'post',
+        data:{userId:5,deviceUserId:duid},
+        success:function(data){
+            $this.parents('li').remove();
+            alert("删除成功");
+            $('.mask').css('top','-100%')
+        },
+        error:function(){$.alert('系统繁忙，请稍后再试');}
+    })
+}
+
+
+}
+},'.edit')
+$('body').on({//切换请求
+    'click':function(){
+        var mark=$(this).parents('li').data('mark')
+        $.ajax({
+            url:'http://smartev.sunruncn.com:8080/SmartEv/rest/ev/switchIndexDevice.json',
+            type:'post',
+            data:{userId:5,deviceMark:mark},
+            success:function(data){alert('切换成功')},
+            error:function(){
+                $.alert('系统繁忙，请稍后再试');  
+            }
+        })
+ }
+},'.switch')
+
+</script>
+<script type="text/javascript">
+    $.ajax({//一进来加载列表信息
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/ev/queryDeviceByUserList.json',
+        type:'post',
+        data:{userId:5},
+        success:function(data){
+            if(data.deviceUserDTOs.length==0) {//
+
+            }else{
+                var html='';
+                $.each(data.deviceUserDTOs,function(i,item){
+                    html+=`<li class="device-item" data-mark="${item.deviceMark}" data-duid="${item.deviceUserId}">
+                    <section class="fl-left dev-left">
+                        <p class="dev-name">设备名：<span>${item.deviceName}</span></p>
+                        <p class="dev-num">序列号：<span>${item.deviceMark}</span></p>
+                    </section>
+                    <section class="fl-right clearfix dev-right">
+                        <a class="fl-left edit"><img src="assets/images/bianji.png"/></a>
+                        <label class="devlabel">
+                            <input  type="radio" name="devicenchoose" ${item.isIndexDevice?'checked':''} class="switch" value="${item.deviceUserId}"/>
+                            <span class="decheck"></span>
+                        </label>
+                    </section>
+                </li>`
+                })
+                $('#ltem-pro').html(html)
+            }
+        },error:function(){
+                $.alert('系统繁忙，请稍后再试');  
+            }
+    })
+</script>
+</body>
+</html>

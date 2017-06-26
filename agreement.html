@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>协议条例</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+    <script type="text/javascript" src="assets/js/dialog.js"></script>
+    <script type="text/javascript" src="assets/js/mobile.js"></script>
+</head>
+<body>
+<div class="fixed-bottom">
+<div id="touchBcontainer">
+    <ul class="form-group agreementform">
+        <li class="input-w"><a><span class="agreename">《“智护行”电动自行车综合保险说明》</span><img src="assets/images/youjiantou.png"></a></li>
+        <li class="input-w"><a><span class="agreename">《中国人民财产保险股份有限公司电动自行车盗抢保险条款》</span><img src="assets/images/youjiantou.png"></a></li>
+        <li class="input-w"><a><span class="agreename">《“智护行”电动自行车综合保险说明》</span><img src="assets/images/youjiantou.png"></a></li>
+        <li class="input-w"><a><span class="agreename">《“智护行”电动自行车综合保险说明》</span><img src="assets/images/youjiantou.png"></a></li>
+    </ul>
+</div>
+</div>
+<script type="text/javascript">
+    $.ajax({//一进来加载列表信息
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/bx/queryInsuranceAgreementList.json',
+        type:'post',
+        success:function(data){
+            if(data.insuranceAgreementListInfoDTO.length==0) {//
+
+            }else{
+                var html='';
+                $.each(data.insuranceAgreementListInfoDTO,function(i,item){
+                    html+=`<li class="input-w"><a><span class="agreename">${item.title}</span><img src="assets/images/youjiantou.png"></a></li>`
+                })
+                $('.agreementform').html(html)
+                
+            }
+        },error:function(){
+                $.alert('系统繁忙，请稍后再试');  
+            }
+    })
+
+
+</script>
+</body>
+</html>

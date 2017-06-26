@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>易行保登录</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/mobile.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+	<script type="text/javascript" src="assets/js/dialog.js"></script>
+</head>
+<body>
+	<section class="logo">
+		<section class="logoa">
+			<img class="loginlogo" src="assets/images/loginlogo.png" />
+		</section>
+	</section>
+	<form method="post" data-posturl="http://smartev.sunruncn.com:8080/SmartEv/rest/login.json" class="g-form" data-dialogmes="恭喜您,登录成功！" data-gotourl="index.html">
+		<ul class="loginbox">
+			<li class="login-label">
+				<img src="assets/images/zhanghao.png" />
+				<span>账号</span>
+			</li>
+			<li class="login-input">
+				<input placeholder="请输入账号" name="username" onblur="rule.empty($(this),'请输入账号')" data-group-state="false"/>
+			</li>	
+			<li class="login-label">
+				<img src="assets/images/mima.png" />
+				<span>密码</span>
+			</li>
+			<li class="login-input loginpsw">
+				<input  placeholder="请输入密码" name="password"  onblur="rule.empty($(this),'请输入密码')" data-group-state="false"/>
+				<a class="forget" href="resetpassword.html">忘记密码?</a>
+			</li>
+			<!-- <input type="hidden" name="platform"> -->
+			<li class="surebtn">
+				<a class="loginbtn btn">登录</a>
+				<a class="registbtn" href="regist.html">注册</a>
+			</li>
+		</ul>
+	</form>
+
+
+
+	<!-- <script type="text/javascript">
+		function login(){//登录
+			$.ajax({
+				url:'http://smartev.sunruncn.com:8080/SmartEv/rest/login.json',
+				type:'post',
+				data:{username:'$()',password:'zb1989829',platform:''},
+				success:function(data){
+					alert(data.stateCode)
+					if(data.stateCode==0){
+						$.alert('成功');
+						location.href='index.html'
+					}			
+					else if(data.stateCode==105){
+						$.alert('用户不存在');
+					}
+					else if(data.stateCode==202){
+						$.alert('用户名或密码错误');
+					}
+					else if(data.stateCode==204){
+						$.alert('用户名已禁用');
+					}
+					else if(data.stateCode==105){
+						$.alert('用户名不存在')
+					}		
+				},
+				error:function(){
+	            	$.alert('系统繁忙，请稍后再试');	
+		}
+			})
+		}
+	
+	</script> -->
+</body>
+</html>

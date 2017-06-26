@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>购买记录</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script> 
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+    <script type="text/javascript" src="assets/js/mobile.js"></script>
+    <script type="text/javascript" src="assets/js/dialog.js"></script>
+</head>
+<body>
+<ul class="recordlist">
+    <li class="recordbox">
+        <section class="recordtime">
+          20170606
+        </section>
+        <section class="recorditem">
+            <ul class="recorddetail clearfix">
+                <li>
+                    <span class="paynum">300.00</span>
+                    <p class="paytit dqzhf">盗抢综合费(元)</p>
+                </li>    
+                <li>
+                    <span class="paynum">100.00</span>
+                    <p class="paytit zrx">责任险(元)</p>
+                </li> 
+            </ul> 
+            <section class="carinfo">
+                <section class="carinfo-tit">车辆信息</section>
+                <ul class="carinfo-detail">
+                    <li>品牌：小牛</li>
+                    <li>型号：浙z9527</li>
+                    <li>车辆购买时间：20170606</li>
+                    <li>车架编号：54542124545</li>
+                    <li>保险单：64654646545</li>
+                    <li>保险期限：20170606-20180606</li>
+                </ul>
+                <i class="yes">已生效</i>
+            </section>
+            
+            <section class="view">
+                <a href="agreement.html" class="viewagreement">查看协议 <img src="assets/images/youjiantou.png" /></a>
+            </section>
+        </section>
+    </li>
+    <li class="recordbox">
+        <section class="recordtime">
+          20170606
+        </section>
+        <section class="recorditem">
+            <ul class="recorddetail clearfix">
+                <li style="margin:0 auto">
+                    <span class="paynum">300.00</span>
+                    <p class="paytit dqzhf">盗抢综合费(元)</p>
+                </li>                    
+            </ul> 
+            <section class="carinfo">
+                <section class="carinfo-tit">车辆信息</section>
+                <ul class="carinfo-detail">
+                    <li>品牌：小牛</li>
+                    <li>型号：浙z9527</li>
+                    <li>车辆购买时间：20170606</li>
+                    <li>车架编号：54542124545</li>
+                    <li>保险单：64654646545</li>
+                    <li>保险期限：20170606-20180606</li>
+                </ul>
+                <i class="no">未生效</i>
+            </section>
+            
+            <section class="view">
+                <a href="agreement.html" class="viewagreement">查看协议 <img src="assets/images/youjiantou.png" /></a>
+            </section>
+        </section>
+    </li>
+</ul>
+
+<script type="text/javascript">
+var appendProHtml=function(res,_obj){
+$.each(res.iPurchaseRecordInfoDTO,function(i,item){
+    _obj.append(`<li class="recordbox">
+        <section class="recordtime">${item.addTime}</section>
+        <section class="recorditem">
+            <ul class="recorddetail clearfix">
+                <li style="float: none;margin:0 auto">
+                    <span class="paynum">${item.robAmount}</span>
+                    <p class="paytit dqzhf">盗抢综合费(元)</p>
+                </li>          
+                <li>
+                    <span class="paynum">$(item.liabilityAmount}</span>
+                    <p class="paytit zrx">责任险(元)</p>
+                </li> 
+            </ul> 
+            <section class="carinfo">
+                <section class="carinfo-tit">车辆信息</section>
+                <ul class="carinfo-detail">
+                    <li>品牌：${item.brandName}</li>
+                    <li>型号：${item.vehicleModels}</li>
+                    <li>车辆购买时间：${item.vehicleBuyTime}</li>
+                    <li>车架编号：${item.vin}</li>
+                    <li>保险单：${item.insuranceNumber}</li>
+                    <li>保险期限：${item.startTime}-${item.endTime}</li>
+                </ul>
+                <i class="no">${item.insuranceState}</i>
+            </section>
+            <section class="view">
+                <a href="agreement.html" class="viewagreement">查看协议 <img src="assets/images/youjiantou.png" /></a>
+            </section>
+        </section>
+    </li>`);       
+})
+};
+var argument={
+    'url'      : 'http://smartev.sunruncn.com:8080/SmartEv/rest/bx/queryPurchaseRecordList.json',
+    'res'      : {userId:5,pageSize:20},
+    'success'  : appendProHtml,
+    'mainbox'  : $('.recordlist')  
+}
+
+$(function(){
+    addData(argument);
+})
+
+</script>
+</body>
+</html>

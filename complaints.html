@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>投诉建议</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="assets/js/dialog.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+    <script type="text/javascript" src="assets/js/mobile.js"></script>
+</head>
+<body>
+	<textarea class="complaints" placeholder="请输入要投诉或建议的内容"></textarea> 
+	<a class="upload" onclick="complaintsupload()">上传</a>
+    <script type="text/javascript">
+        function complaintsupload(){
+            var userfeed=$(.complaints).val()
+            $.ajax({
+                url:'http://smartev.sunruncn.com:8080/SmartEv/rest/as/saveUserFeedBack.json',
+                type:'post',
+                data:{userId:5,info:userfeed},
+                success:function(data){
+                    $.alert('您的建议已经上传');
+                }，error:function(){
+                    $.alert(msg);
+                }
+            })
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

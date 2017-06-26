@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>支付详情</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+    <script type="text/javascript" src="assets/js/dialog.js"></script>
+    <script type="text/javascript" src="assets/js/mobile.js"></script>
+</head>
+<body>
+<section id="paybox">
+    <section class="form-group">
+        <!-- <section class="input-w">设备<img class="insarrow" src="assets/images/youjiantou3.png" /><input  placeholder="请选择设备" id="choosesetting" /></section> -->
+         <section class="device-item">
+             <section class="fl-left dev-left">
+                <p class="dev-name">设备名：<span class="deviceName">のe电动车1</span></p>
+                <p class="dev-num">序列号:<span>32dajhg23845</span></p>
+            </section>
+        </section>
+        <section class="input-w">经销商<img class="insarrow" src="assets/images/youjiantou3.png" /><input placeholder=" 请选择经销商" id="chooseshopper"   readonly=""/></section>
+    </section>
+    <section class="paytit">
+        发票/合格证/身份证<a class="Idcardlook">查看预览图 <img src="assets/images/youjiantou2.png"></a>
+    </section>
+<!--上传照片开始结束-->
+    <section class="uploadimg">
+        <a href="#"><img class="uploadimgbg" src="assets/images/paizhao1.png" /><p class="uploadtxt">拍照/上传</p></a>
+    </section>
+
+ <script type="text/javascript">
+    $('.uploadimg').click(function(){
+        $('.uploadimg').hide();
+        $('.uploadpic').show();
+    });
+
+$('#choosesetting').click(function(){
+    $('#paybox').hide();
+    $('.devicelist').show();
+});
+  $('#chooseshopper').click(function(){
+    $('#paybox').hide();
+    $('#dealersbox').show();
+});
+</script>
+
+<!--照片开始-->
+    <section class="uploadpic none">
+        <section class="uploadpicitem hege">
+            <img class="chelianghege" src="assets/images/chelianghege.png" /><p class="picname">车辆合格证</p>
+        </section>
+        <section class="uploadpicitem shenfen">
+            <img class="shenfenzheng" src="assets/images/shenfenzheng.png" /><p class="picname">身份证</p>
+        </section>
+        <section class="uploadpicitem gouche">
+            <img class="gouchefapiao" src="assets/images/gouchefapiao.jpg" /><p class="picname">购车发票</p>
+        </section>
+    </section>
+<section class="mask" id="mask3" style="top:-100%"> 
+    <section class="pupimg">        
+        <section class="uploadpicitem hege">
+            <img class="chelianghege" src="assets/images/chelianghege.png" /><p class="picname">车辆合格证</p>
+        </section>
+        <section class="uploadpicitem shenfen">
+            <img class="shenfenzheng" src="assets/images/shenfenzheng.png" /><p class="picname">身份证</p>
+        </section>
+        <section class="uploadpicitem gouche">
+            <img class="gouchefapiao" src="assets/images/gouchefapiao.jpg" /><p class="picname">购车发票</p>
+        </section>
+    </section>
+</section>
+<script type="text/javascript">
+    $('.Idcardlook').click(function(){
+        $('#mask3').css('top','0px');
+        $('#mask3').click(function(){
+           $('#mask3').css('top','-100%');
+        });
+    });
+</script>
+    <section class="paytit">
+         付款方式
+    </section>  
+    <ul class="payway clearfix">
+        <li>
+            <img  class="paywayicon fl-left" src="assets/images/zhifubao.png"/>
+            <span class="fl-left zhifubao">支付宝</span>
+            <input id="item1" type="radio" name="payway"/>
+            <label class="paylabel" for="item1"></label>
+        </li>
+        <li>
+            <img  class="paywayicon fl-left" src="assets/images/weixin.png"/>
+            <span class="fl-left weixin">微信</span>
+            <input id="item2" type="radio" name="payway"/>
+            <label class="paylabel" for="item2"></label>
+        </li>
+        <li>
+            <img class="paywayicon fl-left" src="assets/images/yinlian.png"/>
+            <span class="fl-left yinlian">银联</span>
+            <input id="item3" type="radio" name="payway"/>
+            <label class="paylabel" for="item3"></label>
+        </li>
+    </ul>
+     <section class="registbottom paymentbottom">
+        <span class="paymoney">盗抢综合费：￥500.00</span>
+        <a class="continuebuy" href="insurancepage.html">支付</a>
+      
+    </section>
+</section>
+
+<!-- 
+<script type="text/javascript">
+$('.continuebuy').click(function(){
+    $.ajax({
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/bx/insuranceOrderPrestore.json',
+        type:'post',
+        data:{
+            userId:5,
+            deviceUserId
+            dealerId:brandId
+            robAmount
+            liabilityAmount
+            name
+            idNumber
+            homeAddress
+            phone
+            startTime
+            endTime 
+            vehicleBuyTime
+            vehicleModels
+            vehicleIdentificationNumber 
+            pic
+            paymentId
+            dealerName 
+     },success:function(){
+
+        
+     }
+    })
+
+})
+
+</script> -->
+<!-- 经销商 -->
+<section id="dealersbox" class="none">
+    <section class="repairpos ">
+        <img class="repairposicon" src="assets/images/dingwei2.png" />
+        <input id="repairpostion" type="text" readonly="" name="input_area" placeholder="未选择地区"/>
+        <a class="dealerfirstchoose">地区</a>
+    </section>
+    <section class="areabox none" id="provincebox">
+        <section class="fl-left arealeveltit">全省</section>
+        <ul class="fl-left areadetail">
+            <li class="arealiback"></li>    
+            <li class="realarea">
+                 <!--这里显示出省-->
+            </li>    
+        </ul>
+    </section>
+    <section class="areabox none" id="citybox">
+        <section class="fl-left arealeveltit"></section>
+        <ul class="fl-left areadetail">
+            <li class="arealiback">
+               <p class="konghang" >
+                    <a class="arealia" id="backprovince">返回上一级</a>
+                </p>
+            </li>
+            <li class="realarea">
+                <!--这里显示出市-->
+            </li>    
+        </ul>
+    </section>
+    <section class="areabox none" id="regionbox">
+        <section class="fl-left arealeveltit"></section>
+        <ul class="fl-left areadetail">
+            <li class="arealiback">
+                 <p class="konghang" >
+                    <a class="arealia" id="backcity">返回上一级</a>
+                </p>
+            </li>
+            <li class="realarea">
+                 <!--这里显示出区-->
+            </li>    
+        </ul>
+    </section>
+    <ul class="form-group choosebill none" id="choosedealers">
+        <li class="input-w">天一xxx经销商<input type="radio" class="input_check" id="checkone" name="dealers" value="天一xxx经销商"><label  class="labelpay" for="checkone"></label></li>
+        <li class="input-w">天一xxxxxx经销商<input type="radio" class="input_check" id="checktwo" name="dealers" value="天一xxxxxxxx经销商"><label class="labelpay" for="checktwo"></label></li>
+    </ul>  
+    <section class="form-group choosebill  none" id="nofounddealers">
+        <section class="input-w">经销商<input placeholder="请输入经销商名称" id="dealername" style="text-align: right;" /></section>
+    </section>  
+    <section class="registbottom none" id="dealersbottom3">
+        <a class="confirmregist"  id="completefoundf">完成</a>
+    </section>
+    <section class="registbottom dealersbottom none" id="dealersbottom2">
+        <a class="notfound fl-left" id="nofound">未筛选到</a>
+        <a class="complete fl-left" id="completefound">完成</a>
+    </section>
+</section>
+<script type="text/javascript">
+$('.dealerfirstchoose')[0].onclick=function(){//点击地区按钮
+    if($('.dealerfirstchoose').html()=="地区"){
+        $('#provincebox').show();
+        $('.dealerfirstchoose').html("关闭")
+    }
+    else if($('.dealerfirstchoose').html()=="关闭"){
+        $('.areabox').hide();
+         $('.dealerfirstchoose').html("地区")
+          $('#repairpostion').val("");
+    }
+
+    else if($('.dealerfirstchoose').html()=="切换"){
+            $('#provincebox').show();
+            $('#repairpostion').val("");
+            $('.dealerfirstchoose').html("关闭");
+            $('#choosedealers').hide();
+            $('#dealersbottom2').hide()
+
+    }
+}
+
+
+
+$.ajax({
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/querySmartEvArea.json',
+        type:'post',
+        data:{areaId:0},
+        success:function(data){
+            if(data.areaDTOs.length==0){
+        }
+        else{
+            var html=''
+            $.each(data.areaDTOs,function(i,item){
+                html+=` <li class="areali"  data-proname="${item.areaName}" data-proid="${item.areaId}">${item.areaName}</li>`
+            })
+            $('#provincebox .areadetail').html(html)//该步骤显示所有的省和直辖市
+
+             
+        }
+    }
+}) 
+
+var  proid,proname
+$(function(){
+  $('#provincebox').on({//点击某一个省的按钮显示所选省的所有市
+    click:function(){
+    $(this).addClass('visited'); 
+    $(this).siblings().removeClass('visited')
+    $('#citybox').show(); 
+    $('#provincebox').hide();
+    proid=$(this).data('proid');
+    proname=$(this).data('proname')
+    $.ajax({
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/querySmartEvArea.json',
+        type:'post',
+        data:{areaId:proid},
+        success:function(data){
+            var html=''
+            $.each(data.areaDTOs,function(i,item){
+                html+=` <li class="areali" data-cityid="${item.areaId}" data-cityname="${item.areaName}">${item.areaName}</li>`;               
+            })
+            $('#citybox .realarea').html(html);
+            $('#repairpostion').val(proname);
+            $('.arealeveltit').html(proname);
+              $('#backprovince').click(function(){ 
+                $('#citybox').hide(); 
+                $('#provincebox').show();
+            })      
+        } 
+
+    })               
+  }
+  },'.areali')  
+})
+
+
+
+
+ var cityid,cityname
+ $('#citybox').on({//点击市显示所选市的所有区
+        click:function(){
+        $(this).addClass("visited");
+        $(this).siblings().removeClass('visited') 
+        $('#regionbox').show(); 
+        $('#citybox').hide();
+        cityid=$(this).data('cityid');
+        cityname=$(this).data('cityname');
+        $('.arealeveltit').html(cityname);
+        $.ajax({
+            url:'http://smartev.sunruncn.com:8080/SmartEv/rest/querySmartEvArea.json',
+            type:'post',
+            data:{areaId:cityid},
+            success:function(data){
+                var html=''
+                $.each(data.areaDTOs,function(i,item){
+                    html+=` <li class="areali" data-regionid="${item.areaId}" data-regionname="${item.areaName}">${item.areaName}</li>`
+                })
+                $('#regionbox .realarea').html(html);
+                $('#repairpostion').val($('#repairpostion').val()+cityname)
+                $('#backcity').click(function(){ 
+                    $('#regionbox').hide(); 
+                    $('#citybox').show();
+                    $('#repairpostion').val(proname)
+                })              
+           
+            }
+
+        })               
+
+  }
+  },'.areali')
+ $('#regionbox').on({//点击区获取完整地址传到input，并呈现相应的供应商
+        click:function(){
+        $('#regionbox').hide(); 
+        $('#choosedealers').show();
+        $('#dealersbottom2').show();
+        $('#nofound')[0].onclick=function(){
+        $('#choosedealers').hide()
+        $('#nofounddealers').show()
+        $('#dealersbottom2').hide()
+        $('#dealersbottom3').show()
+        $('#completefoundf')[0].onclick=function(){
+            $('#dealersbox').hide();
+            $('#paybox').show();
+            var value=$('#dealername').val();
+            $('#chooseshopper').val(value);
+        }
+}
+        var regionname=$(this).data('regionname');
+        $('#repairpostion').val($('#repairpostion').val()+regionname)
+        var regionid= $(this).data('regionid');
+        var regionname= $(this).data('regionname'); 
+        var appendProHtml=function(res,_obj){
+            $.each(res.dealerListInfoDTO,function(i,item){
+                _obj.append(`<li class="input-w">天一xxx经销商<input type="radio" class="input_check"  name="dealers" value="天一xxx经销商"><label  class="labelpay" ></label></li>`);       
+            })
+            };
+        var argument={
+            'url'      : 'http://smartev.sunruncn.com:8080/SmartEv/rest/user/querydealerList.json',
+            'res'      : {userId:5,pageSize:20,provinceId:proid,cityId:cityid,districtId:regionid,pageNo:1},
+            'success'  : appendProHtml,
+            'mainbox'  : $('#choosedealers')  
+        }
+
+$(function(){
+    addData(argument);
+})
+$('.dealerfirstchoose').html("切换")
+
+  }
+  },'.areali')
+</script>
+</body>
+</html>

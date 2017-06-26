@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>车辆型号</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+</head>
+<body>
+<ul class="loginbox">
+        
+        <li class="login-input">
+            <input id="carmodel" placeholder="请输入车辆型号" />
+            <a class="deletemodeltype"><img src="assets/images/shanchu.png"></a>
+        </li>   
+        
+    </ul>
+ 
+    <section class="registbottom">
+        <a class="confirmregist" href="insurance.html" id="sure">确定</a>
+    </section>
+    <script type="text/javascript">
+       $('.deletemodeltype').click(function(){
+         $("#carmodel").val("");
+       })
+       $("#carmodel").focus(function(){
+        if($(this).val()==""){
+            $(this).val("");
+        }
+});
+$("#sure").click(function(){
+   alert($("#carmodel").val());
+
+})
+
+    </script>
+</body>
+</html>

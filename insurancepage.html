@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>综合保险</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+</head>
+<body>
+<div class="paydetailtop">
+    <section class="paydetail clearfix">
+        <section class="inspaytop bgblack inspaytopleft ">
+            <img class="inspaylevel" src="assets/images/feiyongzonghetubiao.png">
+            <p class="inspaytoptotal">￥400</p>
+            <span class="font-20">费用总和</span>
+        </section>
+        <section class="inspaytop bgwhite inspaytopright">
+            <P class="inspaytopright-item clearfix"><img src="assets/images/daoqiangzonghefei.png"/>抢盗综合费：￥300.00</P>
+            <p class="inspaytopright-item clearfix"><img src="assets/images/zerenxian.png"/>责任险：￥100.00</p>
+        </section>
+    </section>
+    <section class="tit">
+        <img  class="chetitimg" src="assets/images/cheliangxinxi.png" />
+        <span>车辆信息</span>
+        <a href="agreement.html" class="checkagment">查看协议 <img src="assets/images/youjiantou.png"></a>
+    </section>
+    </div>
+<section class="form-group">
+    <section class="input-w">品牌<span class="form-val">小牛</span></section>
+    <section class="input-w">型号<span class="form-val">浙z9527</span></section>
+    <section class="input-w">车辆购买时间<span class="form-val">20170606</span></section>
+    <section class="input-w">车架编号<span class="form-val">4542124542</span></section>
+</section>
+    <section class="insurancedetail">
+        <p>订单号：sa24235878342424</p>
+        <p>支付时间：20170606  14:30</p>
+        <p>保单号：24235878342424</p>
+        <p>保险期限：20170606-20180606</p>
+        <p>是否生效：已生效</p>
+    </section>
+
+    <section class="registbottom insurancebottom">
+        <span class="expirationtime">20170606到期</span>
+        <a class="continuebuy">续保</a>
+        <a class="buyhistory" href="record.html">购买记录</a>
+      
+    </section>
+<script type="text/javascript">
+$.ajax({
+    url:'http://smartev.sunruncn.com:8080/SmartEv/rest/bx/queryInsuranceView.json',
+    type:'post',
+    data:{userId:5},
+    success:function(data){
+        if (data.chargeListDTO.length==0) {} 
+        else{
+
+        }       
+    }
+
+
+
+})
+</script>
+</body>
+</html>

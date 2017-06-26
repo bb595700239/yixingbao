@@ -1,0 +1,346 @@
+/*首页*/
+.nav{background: #25282b;color: #fcda3d;text-align: center;height: 0.75rem;line-height: 0.75rem;position: relative;width:6.4rem;font-size: 0.24rem;position: relative;}
+.nav .nav_extension{position:absolute;left: 0.17rem;top: 0.25rem;}
+.nav .nav_extension img{width: 0.3rem;display: block;}
+.nav .setting_btn{position: absolute;right: 0.17rem;top: 0.25rem;}
+.nav .setting_btn img{width: 0.3rem;display: block;}
+.bannerimg{width: 6.4rem;height: 3.2rem;display: block;}
+.situation{width:6.4rem;background: #25282b;height: 3.2rem;color:#acc2d7;position: relative;}
+.dianliang{width: 2.39rem;height: 2.03rem;position: absolute;left: 0.3rem;top:0.2rem;background: url("../images/dianliang.png") no-repeat;background-position: 0rem -2.1rem ; background-size: 100%}
+.soc{width: 3.2rem;height: 2.4rem;text-align: center;font-size: 0.20rem;padding-top:0.8rem}
+.cycling{width: 3.2rem;height:2.2rem;text-align: center;font-size: 0.20rem;padding-top:0.8rem}
+.num{font-size: 0.72rem}
+.unit{font-size:0.24rem}
+.curnoequipment{width: 6.4rem;height: 2.4rem;background: #25282b;text-align: center;padding-top: 0.8rem;}
+.noequtit{font-size: 0.4rem;color: #a5bace;}
+.pleasebind{display: block;width: 2.57rem;height: 0.58rem;background: #4b535c;margin: 0.26rem auto;border-radius: 0.1rem;line-height: 0.58rem}
+.pleasebind span{color: #a5bace;font-size: 0.24rem;display: block;}
+.pleasebind img{width: 0.44rem;height: 0.44rem;display: block;margin:0.07rem 0.15rem 0.07rem 0.58rem}
+.function{height: 4.12rem;margin-top: 0.5rem;width:6.4rem;font-size: 0.24rem}
+.function .function-icon{display: block;margin:0.5rem auto 0.6rem;width: 0.5rem}
+.functionup{ height: 2.04rem;background: url("../images/bg.png") no-repeat;background-size: 100%}
+.functiondown {height: 2.05rem;border-top: 0.01rem solid #edf1f4;background:#fff;}
+.function a{width:2.13rem;height: 2.05rem; float: left;text-align: center;display: block;color: #000}
+.function-kaiguan{margin:-0.25rem auto 0.2rem;display: block;width: 1.7rem;}
+.shouhou{width: 6.4rem;height: 0.68rem;font-size: 0.24rem;}
+.shouhou i{display: block;margin: 0.16rem;}
+.shouhou img{display: block;width: 0.37rem;}
+.shouhou span{display:height: 0.68rem;line-height: 0.68rem; }
+.index-bottom{width:6.4rem;height: 1.54rem;background:#fff;text-align:center; font-size: 0.24rem;}
+.index-bottom li{float: left; width:2.13rem;height: 1.54rem;}
+.usertelnumber{line-height: 1.15rem;display: block}
+.index-bottom span{color: #000;display: block;}
+.index-bottom img{margin: 0.32rem auto;display: block;width: 0.5rem}
+/*首页侧边栏*/
+.jiao{border: 0.16rem rgba(0,0,0,0.65) solid; border-color: transparent transparent rgba(0,0,0,0.65) transparent;position: absolute;left: 0.1rem;top:-0.31rem;}
+.broadside{width: 3.08rem;height: 4.96rem;background: rgba(0,0,0,0.65);position: absolute;z-index: 99;left: 0.15rem;top:0.95rem;border-radius: 0.1rem;color: #fbffff;}
+.usertel{border-bottom: #8e969e 0.01rem solid;width: 2.74rem;display: block;margin:0 auto;}
+.broadside a{color:#fbffff }
+.broadside-item{height: 0.86rem;}
+.broadside-item img{display: block;}
+.broadside-item span{display: block;}
+.broadsideicon{display: block;width: 0.42rem;margin-left: 0.16rem;margin-top: 0.16rem;margin-right:0.18rem}
+.arrow{display: block;width: 0.15rem;margin-top: 0.27rem;margin-left:0.98rem}
+.exitlogin{color:#fcda3d}
+/*首页添加设备弹窗*/
+.mask{ position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.44);filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#3D000000', endColorstr='#3D000000');transition:top 0.5s;-webkit-transition:top 0.5s;-o-transition:top 0.5s;-moz-transition:top 0.5s;z-index: 1000;}
+#mask2 .pupbottom{text-align: center;}
+.pupwindow{width: 6.07rem;height: 6.06rem;background: #fff;border-radius: 0.15rem;position:absolute;left: 50%;top: 50%; margin:-3.03rem 0 0 -3.03rem;}
+.puptit{font-size: 0.3rem;text-align: center;}
+.pupbottom{position: absolute;bottom: 0;line-height: 0.85rem;font-size: 0.3rem}
+.pupcencel{display: block;width: 3.03rem;height: 0.87rem;background:#fd4456;color:#fff;border-radius:0 0 0 0.15rem }
+.pupcencel-icon{display: block;width: 0.48rem;height: 0.48rem;float: left;margin-left:0.56rem;margin-top:0.18rem ;margin-right: 0.15rem}
+.pupconfirm-icon{display: block;width: 0.4rem;height: 0.48rem;float: left;margin-left:0.6rem;;margin-top:0.18rem ;margin-right: 0.15rem}
+.pupconfirm{display: block;width: 3.04rem;height: 0.87rem;background:#25282b;color: #fcda3d;border-radius:0 0 0.15rem 0 }
+.pupadd{display: block;width: 6.06rem;height: 0.87rem;background:#25282b;color: #fcda3d;border-radius:0 0 0.15rem 0.15rem}
+.puplabel{font-size: 0.25rem;margin-left: 0.17rem;margin-bottom: 0.15rem;margin-top:0.1rem;}
+.pupinput{width:5.72rem ;height: 0.86rem;background: #25282b;border-radius: 0.5rem;margin-left: 0.17rem;position:relative;}
+.pupinput .qingkong img{width: 0.42rem;height: 0.42rem;display: block;position: absolute;left: 5.1rem;top:0.2rem;}
+.pupinput input{display: block;width:5.4rem ;height: 0.86rem;color: #fcda3d;border:none;background:transparent;font-size: 0.22rem}
+.pupinput input::-webkit-input-placeholder { /* WebKit, Blink, Edge */color:#fcda3d;}
+.pupinput input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */color:#fcda3d;}
+.pupinput input::-moz-placeholder { /* Mozilla Firefox 19+ */color:#fcda3d;}
+.pupinput input:-ms-input-placeholder { /* Internet Explorer 10-11 */color: #fcda3d;}
+.shanchu{display: block;width: 0.42rem;height: 0.42rem;position: absolute;right: -0.1rem;top: -0.1rem;}
+.shanchuimg{display: block;width: 0.42rem;height: 0.42rem;}
+/*注册*/
+.regsitlist li{height: 0.85rem;width: 6.4rem;background: #fff;border-top:#f0f4f6 0.02rem solid}
+.regsitlist li input{display: block;height: 0.85rem;width: 6.4rem;border: none;font-size: 0.24rem}
+.registbottom{height: 0.85rem;width: 100%;background: #25282b;position: fixed;bottom: 0;text-align: center;line-height: 0.85rem;font-size:0.24rem;}
+.confirmregist{color:#ffe03d;height: 0.85rem;width: 100%;display: block;}
+.Verificationcode{width: 2rem;height: 0.85rem;display: block; background: #25282b;color: #fcda3d;float: right;font-size: 0.2rem;line-height: 0.85rem;text-align: center;}
+.regsitlist .getcode input{width: 3.93rem;display: block;float: left;}
+/*登录*/
+.logo{width: 6.4rem;height: 3.02rem;background: #25282b;padding-top: 0.18rem}
+.logoa {width: 2.32rem;height: 2.32rem;border:none;text-align: center;margin:0 auto;}
+.logoa .loginlogo{width: 2.32rem;height: 2.32rem;}
+.logoa span{line-height:2.32rem; }
+.login-label{height: 0.76rem;position: relative;line-height: 0.76rem;font-size: 0.28rem}
+.login-label span{display: block;margin-left: 0.75rem;}
+.login-label img{width: 0.4rem;position: absolute;left: 0.15rem;top: 0.15rem}
+.login-input{height: 0.85rem;width: 6.4rem;background: #fff;font-size: 0.2rem;position: relative;}
+.login-input input{display: block;height: 0.85rem;width:4.5rem;border: none;}
+.loginbtn{width:6.06rem;height:0.86rem;display: block;background: #c4d6e8;color: #fff;border-radius:0.1rem;text-align: center;line-height: 0.86rem;margin:0.16rem auto;font-size: 0.24rem;letter-spacing: 0.02rem}
+.loginpsw {position: relative;}
+.forget{font-size: 0.2rem;position: absolute;left: 5.1rem;top:0.28rem;}
+.registbtn{font-size: 0.2rem;display: block;float: right;margin-right: 0.28rem}
+/*添加设备列表*/
+.device-item{width:6.4rem;height:1rem;background: #fff;border-top:#f2f5f7 0.02rem solid;}
+.dev-left{margin-left:0.16rem;margin-top: 0.16rem}
+.dev-name{font-size: 0.28rem;color: #000;}
+.dev-num{font-size: 0.18rem;color: #c8c8c8}
+.dev-right{margin-right: 0.3rem;margin-top: 0.24rem;position: relative;}
+.dev-right img{display:block;width: 0.52rem;height: 0.52rem}
+.edit{margin-right: 0.16rem}
+.addbottom{height: 0.85rem;width: 100%;background: #25282b;position: fixed;bottom: 0;font-size:0.24rem;}
+.add{color:#ffe03d;height: 0.85rem;width: 100%;display: block;text-align: center;line-height: 0.85rem;position: relative;}
+.add img{width: 0.42rem;height: 0.42rem;display: block; position: absolute;top:0.2rem;left: 2.2rem}
+.dev-right input[type="radio"] {width:0.52rem;height:0.52rem;opacity: 0;}
+ /*设置选中的input的样式*/
+ /* + 是兄弟选择器,获取选中后的label元素*/
+.decheck{position: absolute;left:0.63rem;top: 0rem;width: 0.52rem;height: 0.52rem;background: url("../images/qiehuan2.png") no-repeat;background-size: 100%; }
+.dev-right input:checked+.decheck{background: url("../images/qiehuan.png")no-repeat;background-size: 100%;} 
+/*新加电压样式*/
+.pupvoltage{width:5.72rem ;height: 0.86rem;margin-left: 0.17rem;}
+.pupvoltageitem{width: 1.9rem;height: 0.86rem;float: left;position: relative;}
+.pupvoltageitem input[type="radio"] {width:0.52rem;height:0.52rem;opacity: 0;}
+.voltagechosse{position: absolute;left:0.05rem;top: 0rem;width: 1.7rem;height: 0.86rem;background:#c8c8c8 no-repeat;text-align: center;color: #fff;line-height: 0.86rem;border-radius: 0.5rem;font-size: 0.28rem;}
+.pupvoltageitem input:checked+.voltagechosse{color: #fcda3d;background: #25282b;}
+/*设备列表*/
+.dev-right a{font-size: 0.22rem}
+.dev-right .you{width: 0.16rem;height: 0.24rem;display: block;float: right;margin-top: 0.13rem;margin-left: 0.13rem}s
+/*报修*/
+.repair-nav{width: 6.4rem;height:0.84rem; background:#25282b;color: #a7bdd1;}
+.repair-navitem{width: 3.2rem;height:0.84rem;}
+.repair-navitem .repairnav-icon{width:0.48rem;height: 0.48rem;float: left;margin-top: 0.18rem;margin-left:0.75rem;margin-right:0.16rem;background: url("../images/repairicon.png") no-repeat;background-size:1.2rem 1.2rem; }
+.repair-navitem .icon-surround{background-position:-0.06rem -0.06rem;}
+.repair-navitem .icon-repair{background-position:-0.66rem -0.06rem;}
+.on{color: #f4d33c;}
+.repair-navitem span{height: 0.42rem;display: block;float: left;font-size: 0.24rem;margin-top: 0.21rem}
+.shoplist-item{width:6.4rem;height:1rem;background: #fff;border-top:#f2f5f7 0.02rem solid;}
+.shop-left{margin-left:0.16rem;margin-top: 0.16rem}
+.shop-name{font-size: 0.25rem;color: #000;}
+.shop-address{font-size: 0.23rem;color: #c8c8c8}
+.shop-right{margin-right: 0.17rem;margin-top: 0.3rem}
+.shop-right img{display:block;width: 0.42rem;height: 0.42rem}
+.repairpos{width: 6.4rem;height: 0.67rem;background: #fefcec}
+.repairposicon{display: block;float: left;width: 0.27rem;height: 0.35rem;margin-top: 0.16rem;margin-left: 0.16rem;}
+#repairpostion{background:#fefcec;border:none;color:#ff6e38;display:block;width: 5rem;height: 0.67rem;font-size: 0.22rem;line-height: 0.67rem;float: left;position:relative;overflow: hwhite-space: nowrap;text-overflow: ellipsis;}
+/*新的经销商筛选器*/
+#repairpostion::-webkit-input-placeholder { /* WebKit, Blink, Edge */color:#ff6e38;}
+#repairpostion:-moz-placeholder { /* Mozilla Firefox 4 to 18 */color:#ff6e38;}
+#repairpostion::-moz-placeholder { /* Mozilla Firefox 19+ */color:#ff6e38;}
+#repairpostion:-ms-input-placeholder { /* Internet Explorer 10-11 */color: #ff6e38;}
+.dealerfirstchoose{position: absolute;display:block;width: 0.69rem;height: 0.42rem;border-radius: 0.2rem;color: #fff;background: #ff6e38;left: 5.5rem;top:0.1rem;font-size: 0.18rem;line-height: 0.42rem;text-align: center;}
+.areabox{width: 6.4rem;height: 3.9rem;background: #e6e6e6;padding-top: 0.2rem;overflow-y: scroll; }
+.areali{width: 1.68rem;height: 0.52rem;background: #fff;border:0.02rem solid #d4d4d4;border-radius: 0.08rem;float: left; margin:0rem 0.18rem 0.2rem 0;text-align: center;line-height: 0.52rem;color: #5b5b5b;font-size: 0.18rem;list-style-type:none;overflow: hidden;
+white-space: nowrap;text-overflow: ellipsis;}
+.areadetail{width: 5.7rem;}
+.arealeveltit{font-size: 0.22rem;width: 0.7rem;height: 3.9rem}
+.arealiclick{color: #fff;background:#2a88e7;}
+.arealia{display: block;width: 1.68rem;height: 0.52rem;background: #fff;border:0.02rem solid #d4d4d4;border-radius: 0.08rem;float: left; margin:0rem 0.18rem 0.2rem 0;text-align: center;line-height: 0.52rem;color: #5b5b5b;font-size: 0.18rem;}
+.konghang{width: 5.7rem;height: 0.76rem;}
+.visited{color:#fff;background: #0992e1}
+/*定位*/
+.tit{height:0.68rem;line-height: 0.68rem;margin-left:0.15rem;font-size: 0.22rem}
+.titimg{display: block;float: left;width: 0.26rem;height: 0.35rem;margin-right: 0.12rem;margin-top: 0.15rem}
+.map img{width: 6.4rem;height: 6.4rem;}
+.curaddress{width: 6.08rem;background: #ffffff;font-size: 0.24rem;padding:0.16rem;color: #7f7f7f;}
+.historyroute{color:#ffe03d;height: 0.85rem;width: 100%;display: block;}
+/*投诉建议*/
+.complaints{width: 6.4rem;height: 5rem;border:0px;font-size: 0.23rem;margin-bottom: 0.17rem}
+.upload{display:block;width:6.06rem;height:0.86rem;margin:0 auto;background: #c4d6e8;font-size: 0.3rem;color: #fff;text-align: center;line-height: 0.86rem;border-radius: 0.1rem;}
+/*综合保险第一步*/
+.insurebanner{width: 6.4rem;height: 9.45rem;}
+.insurebanner img{width: 6.4rem;height: 9.43rem;display: block;}
+.purcharsehistory{width: 3.2rem;background: #65677e;color: #fff;display: block;font-size: 0.3rem;}
+.purcharsehistory img{display: block;width: 0.36rem;height:0.36rem;float:left;margin-top: 0.24rem;margin-right: 0.15rem;margin-left:0.73rem;}
+.insurefirstbottom{height: 0.85rem;width: 100%;background: #25282b;position: fixed;bottom: 0;line-height: 0.85rem;font-size:0.24rem;}
+.purcharsebtn{color: #ffec3f;display: block;font-size: 0.3rem;width: 3.2rem;}
+.purcharsebtn img{display: block;width: 0.4rem;height:0.4rem;float:left;margin-top: 0.2rem;margin-right: 0.15rem;margin-left:1rem;}
+/*综合保险page*/
+.inspaytop{width:3.2rem;height:2.05rem;float: left;}
+.inspaytopleft{text-align: center;position: relative;}
+.inspaylevel{display: block;width: 2.65rem;height: 1.33rem;position:absolute;left: 0.3rem;top:0.08rem;}
+.inspaytoptotal{margin-top: 0.9rem;font-size: 0.4rem}
+.inspaytopright{padding-top:0.42rem;height:1.63rem;font-size: 0.2rem}
+.inspaytopright-item{margin-left:0.15rem;line-height: 0.42rem;margin-bottom:0.3rem;}
+.inspaytopright-item img{display: block;width: 0.4rem;height: 0.4rem;float: left;margin-right:0.16rem}
+.chetitimg{display: block;float: left;width: 0.4rem;height: 0.4rem;margin-right: 0.12rem;margin-top: 0.15rem}
+.checkagment{float: right;margin-right: 0.15rem;color: #000000;}
+.checkagment img{display: block;width: 0.14rem;height: 0.24rem;float:right;margin-left: 0.15rem;margin-top: 0.22rem}
+.insurancedetail{width: 6.23rem;height: 2.14rem;background:#ffffff;margin-top:0.12rem;padding-left:0.17rem;padding-top: 0.06rem}
+.insurancedetail p{color: #cfcfcf;font-size: 0.2rem;line-height: 0.4rem}
+.insurancebottom{text-align: inherit;}
+.expirationtime{color: #f8d53c;font-size: 0.22rem;display: inline-block;margin-left: 0.15rem}
+.buyhistory{background: #65677e;color:#fff;display:block;width:1.37rem;height:0.86rem;float: right;font-size: 0.28rem;text-align: center;}
+.continuebuy{background: #f4d33c;display:block;width:1.2rem;height:0.86rem;float: right;color: #000000;font-size: 0.28rem;text-align: center;}
+.form-val{color: #187ff2;display: inline-block;float: right;margin-right: 0.15rem}
+/*综合保险表单填写*/
+.form-group{font-size: 0.22rem}
+.form-group .tit{height:0.46rem;line-height: 0.46rem;margin-left:0.15rem;}
+.form-group .tip{font-size: 0.14rem}
+.input-w{width: 6.25rem;height: 0.84rem;background: #ffffff;border-top: #edf1f4 solid 0.01rem;border-bottom: #fafbfc solid 0.01rem;line-height: 0.84rem;letter-spacing: 0.02rem;padding-left: 0.15rem}
+.input-w input{display: inline-block;float:right;height: 0.84rem;border:none;text-align: right}
+.input-w input::-webkit-input-placeholder { /* WebKit, Blink, Edge */color:#c8c8c8;}
+.input-w input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */color:#c8c8c8;}
+.input-w input::-moz-placeholder { /* Mozilla Firefox 19+ */color:#c8c8c8;}
+.input-w input:-ms-input-placeholder { /* Internet Explorer 10-11 */color: #c8c8c8;}
+.inschoose{color: #c8c8c8;display: inline-block;float: right;}
+.insarrow{margin-left:0.22rem;display: block;float:right;margin-top: 0.32rem;margin-right: 0.15rem}
+/*经销商*/
+.input-w select{float: right;margin-top: 0.28rem;width: 1.8rem; /*将默认的select选择框样式清除*/ appearance:none;-moz-appearance:none;-webkit-appearance:none;-ms-appearance:none;border:none;}
+.notfound{display: block;width: 3.2rem;height: 0.85rem;background:#fd4456;color:#fff;}    
+.complete{display: block;width: 3.2rem;height: 0.85rem;background:#25282b;color:#fcda3d;}
+/*消息*/
+.mes-level{color: #fff;height: 0.31rem;font-size: 0.17rem;padding:0.07rem 0.04rem;position: absolute;left: 0rem;}
+.mes-level1{background:#fd4456;}
+.mes-level2{background:#2b8fff;}
+.mes-item{width: 6.08rem;height: 1.03rem;background: #ffffff;position: relative;border-bottom: #f2f5f7 0.01rem solid;padding-left: 0.16rem;padding-right: 0.16rem}
+.mes-time{color: #909090;font-size: 0.17rem;display: block;float: right;height: 0.3rem;line-height: 0.3rem}
+.mes-con{font-size: 0.22rem;height:0.72rem;line-height: 0.72rem;width: 6.08rem;float: right;}
+/*购买记录*/
+.recordtime{width: 2.57rem;height: 0.35rem;color: #ffffff;background:#a2a5a8;text-align: center;font-size: 0.16rem;line-height: 0.35rem;border-radius: 0.1rem;margin:0.17rem auto;}
+.recorditem{width: 6.07rem;height: 5.56rem;background:#fff;border-radius: 0.1rem;margin:0 auto;}
+.yes{width: 2.39rem;height: 0.69rem;font-size: 0.28rem; display: block; background:url(../images/yishengxiaobiaoqian.png);background-size: 100%;color: #fff;text-align: center;line-height: 0.69rem;position: absolute;left: 3.67rem;top:0;}
+.no{width: 2.39rem;height: 0.69rem;font-size: 0.28rem; display: block; background:url(../images/weishengxiaobiaoqian.png);background-size: 100%;color: #fff;text-align: center;line-height: 0.69rem;position: absolute;left: 3.67rem;top:0;}
+.recorddetail li{width: 3.03rem;height: 1.81rem;float: left;text-align: center;margin:0 auto;}
+.carinfo{position: relative;padding-left: 0.17rem}
+.paynum{color: #1d2024;font-size: 0.3rem;line-height: 1.2rem}
+.paytit{font-size: 0.26rem}
+.dqzhf{color:#43a4ff;}/*盗抢综合费*/
+.zrx{color: #19cb39;}/*综合险*/
+.carinfo-detail{color: #c5c5c5;font-size: 0.2rem;line-height:0.4rem }
+.carinfo-tit{line-height: 0.69rem;font-size: 0.28rem}
+.view{border-top: 0.02rem solid #dadada}
+.viewagreement{color: #000;font-size: 0.2rem;display: block;width: 5.9rem;height: 0.71rem;position: relative;line-height: 0.71rem;padding-left:0.16rem }
+.viewagreement img{position: absolute;left: 5.7rem;top:0.2rem;display: block;width: 0.16rem;height: 0.24rem;}
+/*协议条款*/
+.agreementform {width: 6.4rem;background: #fff;font-size: 0.2rem}
+.agreementform .input-w{letter-spacing: 0rem;padding-left: 0.15rem;line-height: 0.25rem;position: relative;}
+.agreename{display: block;width: 5.4rem;margin-top:0.25rem}
+.agreementform a{color: #000;}
+.agreementform .input-w img{display: block;width: 0.16rem;height: 0.24rem;position: absolute;left: 5.8rem;top:0.35rem;}
+/*支付详情*/
+.paytit{height:0.39rem;line-height: 0.39rem;margin-left:0.15rem;font-size: 0.22rem}
+.Idcardlook{float: right;margin-right: 0.15rem}
+.Idcardlook img{display: block;width: 0.14rem;height: 0.24rem;float:right;margin-left: 0.15rem;margin-top: 0.06rem}
+.uploadimg{width: 6.4rem;height: 1.86rem;background: #fff;padding-top: 0.7rem;text-align: center;}
+.uploadimg a{display: block;}
+.uploadtxt{text-align: center;font-size: 0.3rem;color: #000;}
+.uploadimgbg{display: block;margin:0 auto 0.18rem;width: 0.68rem}
+.paymentbottom{text-align: inherit;}
+.paymoney{color: #f8d53c;font-size: 0.22rem;display: inline-block;margin-left: 0.15rem}
+.payway li{width: 6.4rem;height: 1.2rem;background: #fff;border-bottom: 0.02rem solid #f0f3f6;padding-top: 0.16rem;position: relative;}
+.payway span{display: block;font-size: 0.25rem;margin-top: 0.36rem;margin-left:0.16rem;font-weight: 600}
+.paywayicon{display: block;width: 1.03rem;height: 1.03rem;margin-left:0.17rem;}
+.zhifubao{color: #00a9f2}
+.weixin{color:#00d500 }
+.yinlian{color: #00756e}
+.payway input[type="radio"]{width: 20px;height: 20px;opacity: 0;}
+.paylabel{position: absolute;left:5.7rem ;top: 0.45rem;width: 0.31rem;height: 0.31rem;background: url("../images/xuanze.png") no-repeat;background-size: 100%; }
+ /*设置选中的input的样式*/
+ /* + 是兄弟选择器,获取选中后的label元素*/
+ input:checked+.paylabel{background: url("../images/xuanze2.png")no-repeat;background-size: 100%;} 
+/*上传身份证*/
+.uploadpic{width: 6.4rem;height: 2.57rem;background: #000;position: relative;}
+.chelianghege{display: block;width: 1.63rem;height: 1.12rem;border:0.02rem solid #eeede9;border-radius: 0.05rem;margin-bottom:0.07rem;}
+.shenfenzheng{display: block;width: 1.4rem;height: 0.92rem;border:0.02rem solid #eeede9;border-radius: 0.05rem;margin-bottom:0.07rem;}
+.gouchefapiao{display: block;width: 1.76rem;height: 1.16rem;border:0.02rem solid #eeede9;border-radius: 0.05rem;margin-bottom:0.07rem;}
+.picname{font-size: 0.12rem;color: #fff;text-align: center;}
+.hege{position: absolute;left:0.66rem;top: 0.97rem;}
+.shenfen{position: absolute;left:2.43rem;top: 0.38rem;}
+.gouche{position: absolute;left:3.94rem;top: 0.97rem;}
+/*查看照片*/
+.pupimg{width: 6.06rem;height: 3.03rem;background: #000;border-radius: 0.05rem;position:absolute;left: 50%;top: 50%; margin:-1.5rem 0 0 -3.03rem;position: relative;}
+.chelianghege{display: block;width: 1.63rem;height: 1.12rem;border:0.02rem solid #eeede9;border-radius: 0.05rem;margin-bottom:0.07rem;}
+.shenfenzheng{display: block;width: 1.4rem;height: 0.92rem;border:0.02rem solid #eeede9;border-radius: 0.05rem;margin-bottom:0.07rem;}
+.gouchefapiao{display: block;width: 1.76rem;height: 1.16rem;border:0.02rem solid #eeede9;border-radius: 0.05rem;margin-bottom:0.07rem;}
+.picname{font-size: 0.12rem;color: #fff;text-align: center;}
+.hege{position: absolute;left:0.66rem;top: 0.97rem;}
+.shenfen{position: absolute;left:2.43rem;top: 0.38rem;}
+.gouche{position: absolute;left:3.94rem;top: 0.97rem;}
+/*防护*/
+.defendwindow{width: 6.4rem;height: 8.24rem;}
+.defendwindow img{display: block;width: 6.4rem;height: 8.24rem;}
+.defendbox{width: 6.4rem;height: 2.04rem;background: #fff;position: relative;}
+.defendlength{font-size: 0.5rem;text-align: center;}
+.defendtitimg{display: block;float: left;width: 0.4rem;height: 0.4rem;margin-right: 0.12rem;margin-top: 0.15rem}
+/***定位历史纪录***/
+.p-historyitem{width: 6.4rem;height: 1.7rem;background: #fff;border-bottom: #f1f4f6 0.02rem solid;}
+.p-historyitem a{color: #000;width: 6.4rem;height: 1.7rem;display: block;}
+.p-history-detailtime{width: 6.4rem;height: 0.56rem;font-size: 0.2rem;display: block;line-height: 0.56rem;margin-left: 0.17rem;position: relative;cursor: pointer;}
+.p-history-detailtime img{position: absolute;left: 5.9rem;top: 0.2rem}
+.p-history-parameter{width: 2.13rem;text-align: center;}
+.licheng{color: #2b8fff;}
+.yongshi{color: #ff4848;}
+.pingjun{color: #21d219;}
+.p-history-parameter p{font-size: 0.36rem}
+.p-history-label{font-size: 0.2rem;}
+/*选择费用*/
+.p-history-detail{width: 6.4rem;height: 8.58rem;position: relative;}
+.p-history-detailmap{display: block;width: 6.4rem;height: 8.58rem;}
+.p-history-detail .p-historywrap{position: absolute;top:7.9rem; }
+.p-history-detail .recordtime{width: 2.57rem;height: 0.35rem;color: #ffffff;background-color:rgba(0,0,0,0.5);text-align: center;font-size: 0.14rem;line-height: 0.35rem;border-radius: 0.1rem;margin:0.17rem auto;}
+.input_check {position: absolute;width:0.35rem;height:0.25rem;visibility: hidden;}
+.input_check+.labelpay{display: inline-block;width:0.35rem;height:0.25rem;background:#fff;position: absolute;left: 5.8rem;top:0.35rem;}
+.input_check:checked+.labelpay{background: url(../images/dagou.png) no-repeat;background-size: 100%}
+.choosebill .input-w{position: relative;}
+/*品牌*/
+.anchor{height: 5.4rem;position: fixed;right: 0.05rem;top:15%;}
+.anchor a{font-size: 0.1rem;display: block;}
+.brandnav{width: 6.25rem;height: 0.85rem;background: #25282b;font-size: 0.28rem;color: #c1daf2;line-height: 0.85rem;padding-left: 0.15rem}
+.brandtit{display: block;}
+.branditem{position: relative;}
+.branditem input{opacity:0}
+.otherbrand{display: inline-block; width: 1.02rem;height: 0.4rem;border:#c2dcf4 0.01rem solid;border-radius: 0.1rem;font-size: 0.2rem;line-height: 0.4rem;text-align: center;margin-right:0.15rem;margin-top: 0.22rem; color: #c1daf2;}
+.otherbrandon{display: inline-block; width: 1.02rem;height: 0.4rem;border:#f4d33c 0.01rem solid;border-radius: 0.1rem;font-size: 0.2rem;line-height: 0.4rem;text-align: center;margin-right:0.15rem;margin-top: 0.22rem; color: #f4d33c;}
+.brandlistli{width: 6.4rem}
+.brandletter{width: 6.25rem;height: 0.51rem;line-height: 0.51rem;background: #e8edf1;color:#000;padding-left: 0.15rem}
+.brandname{width: 6.25rem;height: 0.84rem;line-height: 0.51rem;background: #fff;color:#000;padding-left: 0.15rem;line-height: 0.85rem;border-top:#e8edf1 0.01rem solid;position: relative;}
+.brandname input[type="radio"]{width: 6.4rem;height:0.84rem;display: block;position: absolute;opacity:0}
+.confirmbrand{color:#9bb0c2;height: 0.85rem;width: 100%;display: block;}
+.confirmbrandon{color:#f4d33c;height: 0.85rem;width: 100%;display: block;}
+/*车型选择*/
+.deletemodeltype{display: block;width: 0.31rem;height: 0.31rem;position: absolute;left:5.9rem;top:0.25rem;}
+.deletemodeltype img{display: block;width: 0.31rem;height: 0.31rem;}
+/*钱包*/
+.walletnav{width: 6.4rem;height:0.84rem; background:#25282b;text-align: center;line-height: 0.84rem;position: relative;font-size: 0.3rem;color: #fcda3d;}
+.walletbanner{width: 6.25rem;height:2.06rem; background:#25282b;color: #f4d33c;padding-left: 0.15rem}
+.walletmoney{font-size: 0.65rem}
+.moneytit{font-size: 0.2rem}
+.walleticon{display: block;width: 0.4rem;height: 0.4rem;float: left;margin-top: 0.2rem;margin-right:0.17rem;}
+.walletitem-a{color: #000}
+.walletnav .back{position:absolute;left: 0.16rem;top: 0.25rem;color: #fcda3d;display: block;font-size: 0.22rem;line-height: 0.3rem;}
+.back img{display: block;width: 0.16rem;float:left;margin-top: 0.02rem;margin-right:0.09rem;}
+.walletnav .walletdetail{position: absolute;right: 0.17rem;top: 0.25rem;color: #fcda3d;display: block;line-height: 0.3rem;font-size: 0.18rem}
+.walletform .input-w{position: relative;}
+.rightarrow{display: block;width: 0.14rem;height: 0.24rem;position: absolute;right: 0.15rem;top:0.3rem;}
+/*支付宝*/
+.alipaynav{width: 6.4rem;height:0.84rem; background:#1b82d1;color: #ffffff;text-align: center;line-height: 0.84rem;position: relative;font-size: 0.3rem;}
+.alipaynav .back{position:absolute;left: 0.17rem;top: 0.25rem;color: #ffffff;display: block;font-size: 0.22rem;line-height: 0.3rem}
+.alipaynav .tianjia{display: block;width:0.4rem;height:0.4rem;position: absolute;right: 0.17rem;top: 0.25rem;}
+.zfb{width: 1.03rem;height: 1.03rem;display:block;float:left;margin-top: 0.16rem;margin-right:0.16rem;}
+.zhifubaoform .input-w{height: 1.35rem;}
+.xinxi{margin-top: 0.3rem}
+.zhifubaoname{font-size: 0.22rem;color: #000;letter-spacing: 0;line-height: 0.22rem}
+.zhifubaotel{font-size: 0.22rem;color: #0084ff;letter-spacing: 0;line-height: 0.22rem}
+/*交易明细*/
+.tradingform .input-w{height:1.01rem;letter-spacing: 0; line-height: 0.5rem}
+.tradingtime{color:#c9c9c9}
+.tradingright{margin-right:0.17rem;margin-top:0.3rem}
+.tradingmoney{color: #ff1010;line-height: 0.22rem}
+.tradingtip{color:#c9c9c9;}
+/*提现*/
+.tixianzhanghao{padding-left: 0.16rem;line-height: 0.5rem}
+.tixianzhanghao .rightarrow{display: block;position: relative;float: right;right: 0rem;top: 0rem;margin-top: 0.4rem;margin-right: 0.2rem;}
+.tixianshue{width: 6.09rem;height:0.85rem;border-radius:0.1rem;background: #fff;margin-left:0.16rem;}
+.tixianshue input{height:0.85rem;display: block;border:none;font-size: 0.4rem;color:#000}
+.fuhao{width: 0.70rem;text-align: center;line-height: 0.85rem;float:left;font-size: 0.6rem}
+.yue{font-size: 0.2rem;padding-left: 0.16rem;padding-right: 0.16rem;margin-top: 0.16rem}
+.allget{display: inline-block;float: right;}
+/*商城*/
+.shopform .input-w{height: 1.53rem;line-height: 0.22rem;padding-left: 0rem;width: 6.4rem}
+.goodsimg{display: block;width: 1.37rem;height: 1.37rem;float: left;margin-right: 0.16rem}
+.goodstit{font-size: 0.3rem;line-height: 0.6rem;margin-bottom:0.5rem}
+.price{color:#f10908;}

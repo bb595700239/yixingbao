@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>综合保险</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/LCalendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+    
+    <script type="text/javascript" src="assets/js/mobile.js"></script>
+    <script type="text/javascript" src="assets/js/dialog.js"></script>
+</head>
+<body>
+<form class="information-box" method="post" data-posturl="http://smartev.sunruncn.com:8080/rest/bx/insuranceOrderPrestore.json" class="g-form" data-dialogmes="信息提交成功" data-gotourl="payment.html">
+    <section class="form-group">
+        <p class="tit">个人信息<span class="tip">（带<i class="red">*</i>是必填项）</span></p>
+        <section class="input-w"><i class="red">*</i>姓名<input id="name" placeholder="请输入姓名" style="text-align: right;" /></section>
+        <section class="input-w"><i class="red">*</i>身份证<input id="identity" placeholder="请输入身份证" style="text-align: right;"/></section>
+        <section class="input-w">家庭住址<input placeholder="请输入家庭住址" id="address" style="text-align: right;"/></section>
+        <section class="input-w">手机号<input placeholder="请输入手机号" id="phone" style="text-align: right;" /></section>
+        <section class="input-w">保险开始时间<input placeholder="请输入开始时间"   style="text-align: right;"/></section>
+        <section class="input-w">保险结束时间<input placeholder="请输入结束时间"   style="text-align: right;"/></section>
+    </section>
+    <section class="form-group">
+        <p class="tit">车辆信息<span class="tip">（带<i class="red">*</i>是必填项）</span></p>
+        <section class="input-w">品牌<img class="insarrow" src="assets/images/youjiantou3.png" /><input placeholder="请选择品牌" type="text" id="brand" /></section>
+        <section class="input-w">型号 <img class="insarrow" src="assets/images/youjiantou3.png" /><input placeholder="请选择型号" type="text" id="modeltype"></section>
+        <section class="input-w"><i class="red">*</i>车辆购买时间<input id="demo1" type="text" readonly="" placeholder="请选择购买时间" data-lcalendar="2000-05-11,2016-05-11" /></section>
+        <section class="input-w"><i class="red">*</i>车架编号<input placeholder="请输入车架编号" style="text-align: right;" /></section>
+    </section>
+   <section class="registbottom"> 
+     <section class="surebtn">
+        <a class="historyroute btn" href="payment.html" id="submit">下一步</a>
+        </section>
+    </section>
+</form>
+
+<section class="brandbox none">
+    <section class="brandnav">
+            <span class="brandtit fl-left">请选择品牌</span>
+            <a id="otherbrand" class="otherbrand fl-right">其他品牌</a>
+    </section>
+    <div class="fixed-bottom">
+    <div id="touchBcontainer">
+    <ul class="brandlist">
+        <li class="brandlistli" id="Ai">
+            <section class="brandletter">A</section>
+            <ul class="clearfix branditem">
+                <li class="brandname">阿斯顿马丁<input type="radio" id="asdmd" name="brandchoose" value="阿斯顿马丁" checked="checked"/></li> 
+                <li class="brandname">阿迪达斯<input type="radio" id="adidas"  name="brandchoose" value="阿迪达斯"/> </li>
+                <li class="brandname">阿玛尼<input type="radio" id="amani"   name="brandchoose" value="阿玛尼"/> </li>
+                <li class="brandname">阿西把<input type="radio" id="axiba" name="brandchoose" value="阿西吧"/></li>
+            </ul>
+        </li>
+        <li class="brandlistli" id="Bi">
+            <section class="brandletter">B</section>
+            <ul class="clearfix branditem">
+                <li class="brandname">宝马牌<input type="radio" id="adidas"  name="brandchoose" value="宝马"/> </li>
+            </ul>
+        </li>
+        <li class="brandlistli" id="Ci">
+            <section class="brandletter">C</section>
+            <ul class="clearfix branditem">
+                <li class="brandname">晨牌<input type="radio" id="adidas"  name="brandchoose" value="晨牌"/> </li>
+            </ul>
+        </li>
+        <li class="brandlistli" id="Ci">
+            <section class="brandletter">D</section>
+            <ul class="clearfix branditem">
+                <li class="brandname">道格牌<input type="radio" id="adidas"  name="brandchoose" value="道格牌"/> </li>
+            </ul>
+        </li>
+        <li class="brandlistli Ei" id="Di">
+            <section class="brandletter">E</section>
+            <ul class="clearfix branditem">
+                <li class="brandname">恶牌<input type="radio" id="adidas"  name="brandchoose" value="恶牌"/> </li>
+            </ul>
+        </li>
+        <li class="brandlistli Fi" id="Ei">
+            <section class="brandletter">F</section>
+            <ul class="clearfix branditem">
+                <li class="brandname">分牌<input type="radio" id="adidas"  name="brandchoose" value="分牌"/> </li>
+            </ul>
+        </li>
+        <li class="brandlistli">
+            <section class="brandletter" id="#i">#</section>
+            <ul class="clearfix branditem">
+                <li class="brandname">007<input type="radio" id="adidas"  name="brandchoose" value="007<"/> </li>
+            </ul>
+        </li>      
+    </ul>
+    </div>
+    </div>
+   <section class="anchor"><a href="#Ai">A</a><a href="#Bi">B</a><a  href="#Ci">C</a><a href="#Di">D</a><a href="#Ei">E</a><a href="#Fi">F</a><a href="#Gi">G</a><a href="#Hi">H</a><a href="#Ii">I</a><a href="#Ji">J</a><a href="#Ki">K</a><a href="#Li">L</a><a href="#Mi">M</a><a href="#Ni">N</a><a href="#Oi">O</a><a href="#Pi">P</a><a href="#Qi">Q</a><a href="#Ri">R</a><a href="#Si">S</a><a href="#Ti">T</a><a href="#Ui">U</a><a href="#Vi">V</a><a href="#Wi">W</a><a href="#Xi">X</a><a href="#Yi">Y</a><a href="#Zi">Z</a><a href="#i">#</a></section>
+    <section class="registbottom">
+        <a class="confirmbrand" >确定</a>
+    </section>
+</section>   
+<script type="text/javascript">
+$.ajax({
+    url:'http://smartev.sunruncn.com:8080/SmartEv/rest/bx/queryDeviceBrandList.json',
+    type:'post',
+    data:{userId:5},
+    success:function(data){
+        if(data.deviceBrandListInfoDTO.length==0) {//
+
+            }else{
+                var html='';
+                $.each(data.deviceBrandListInfoDTO,function(i,item){
+                    html+=`  <li class="brandlistli">
+            <section class="brandletter"></section>
+            <ul class="clearfix">
+                <li class="brandname">${item.brandName}<input type="radio" name="brandchoose" value="${item.brandName}" checked="checked"/></li>
+            </ul>
+        </li>`
+                })
+                $('.brandlist').html(html)
+            }
+    }
+})
+
+
+
+
+
+</script>
+
+<!--其他品牌-->
+<section class="otherbrandbox none">
+    <section class="brandnav">
+            <span class="brandtit fl-left brandyellow">其他品牌</span>
+            <a class="otherbrandon fl-right">其他品牌</a>
+    </section>
+    <ul >
+        <li class="brandlistli" id="Ai">
+            <section class="brandletter">A</section>
+            <ul class="clearfix branditem">
+                <li class="brandname">阿珂<input type="radio" id="asdmd" name="brandchoose" value="阿珂" /></li> 
+                <li class="brandname">阿诺施瓦辛格<input type="radio" id="adidas"  name="brandchoose" value="阿诺施瓦辛格"/> </li>
+                <li class="brandname">阿彦<input type="radio" id="amani"   name="brandchoose" value="阿彦"/> </li>
+                <li class="brandname">阿<input type="radio" id="axiba" name="brandchoose" value="阿"/></li>
+            </ul>
+        </li>
+        <li class="brandlistli" id="Bi">
+            <section class="brandletter">B</section>
+            <ul class="clearfix">
+                <li class="brandname">宝马牌</li>
+            </ul>
+        </li>
+        <li class="brandlistli" id="Ci">
+            <section class="brandletter">C</section>
+            <ul class="clearfix">
+                <li class="brandname">晨牌</li>
+            </ul>
+        </li>
+        <li class="brandlistli" id="Ci">
+            <section class="brandletter">D</section>
+            <ul class="clearfix">
+                <li class="brandname">道格牌</li>
+            </ul>
+        </li>
+        <li class="brandlistli Ei" id="Di">
+            <section class="brandletter">E</section>
+            <ul class="clearfix">
+                <li class="brandname">恶牌</li>
+            </ul>
+        </li>
+        <li class="brandlistli Fi" id="Ei">
+            <section class="brandletter">F</section>
+            <ul class="clearfix">
+                <li class="brandname">分牌</li>
+            </ul>
+        </li>
+        <li class="brandlistli">
+            <section class="brandletter" id="#i">#</section>
+            <ul class="clearfix">
+                <li class="brandname">007</li>
+            </ul>
+        </li> 
+    </ul>
+   <section class="anchor"><a href="#Ai">A</a><a href="#Bi">B</a><a  href="#Ci">C</a><a href="#Di">D</a><a href="#Ei">E</a><a href="#Fi">F</a><a href="#Gi">G</a><a href="#Hi">H</a><a href="#Ii">I</a><a href="#Ji">J</a><a href="#Ki">K</a><a href="#Li">L</a><a href="#Mi">M</a><a href="#Ni">N</a><a href="#Oi">O</a><a href="#Pi">P</a><a href="#Qi">Q</a><a href="#Ri">R</a><a href="#Si">S</a><a href="#Ti">T</a><a href="#Ui">U</a><a href="#Vi">V</a><a href="#Wi">W</a><a href="#Xi">X</a><a href="#Yi">Y</a><a href="#Zi">Z</a><a href="#i">#</a></section>
+    <section class="registbottom">
+        <a class="confirmbrandon" >确定</a>
+    </section>
+</section> 
+<section id="modeltypebox" class="none">
+      <ul class="loginbox" >      
+        <li class="login-input">
+            <input id="carmodel" placeholder="请输入车辆型号" />
+            <a class="deletemodeltype"><img src="assets/images/shanchu.png"></a>
+        </li>   
+     </ul>
+    <section class="registbottom">
+        <a class="confirmregist" id="sure">确定</a>
+    </section>
+</section>
+    <script type="text/javascript">
+   $("#brand").click(function(){
+          $(".information-box").hide()
+          $(".brandbox").show()
+          $("#otherbrand").click(function(){
+              $(".brandbox").hide();
+              $(".otherbrandbox").show();
+              $(".confirmbrandon").click(function(){
+                 $(".otherbrandbox").hide()
+                  $(".information-box").show()
+                  var brandvalue=$('input:radio:checked').val()
+                $("#brand").val(brandvalue);
+              })
+          })
+          $(".confirmbrand").click(function(){
+            $(".brandbox").hide();
+            $(".information-box").show();
+            var brandvalue=$('input:radio:checked').val()
+            $("#brand").val(brandvalue);
+          })
+      });
+      $("#modeltype").click(function(){
+          $(".information-box").hide()
+          $("#modeltypebox").show()
+          $("#sure").click(function(){
+            $("#modeltypebox").hide();
+            $(".information-box").show();
+            var value=$("#carmodel").val();
+            $("#modeltype").val(value);
+          })
+      });
+
+       $('.deletemodeltype').click(function(){
+         $("#carmodel").val("");
+       })
+       $("#carmodel").focus(function(){
+        if($(this).val()==""){
+            $(this).val("");
+        }
+});
+    </script>
+    <script type="text/javascript" src="assets/js/LCalendar.js"></script>
+<script>
+    var calendar = new LCalendar();
+    calendar.init({
+        'trigger': '#demo1', //标签id
+        'type': 'date', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择,
+        'minDate': '1900-1-1', //最小日期
+        'maxDate': new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate() //最大日期
+    });
+    
+    </script>
+</body>
+</html>

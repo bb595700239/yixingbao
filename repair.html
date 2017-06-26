@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>报修</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/swiper.min.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+	<script type="text/javascript" src="assets/js/lArea.js"></script>
+	<script type="text/javascript" src="assets/js/dialog.js"></script>
+	<script type="text/javascript" src="assets/js/mobile.js"></script>
+</head>
+<body>
+<section id="dealersbox">
+    <section class="repairpos ">
+        <img class="repairposicon" src="assets/images/dingwei2.png" />
+        <input id="repairpostion" type="text" readonly="" name="input_area" placeholder="未选择地区"/>
+        <a class="dealerfirstchoose">地区</a>
+    </section>
+    <section class="areabox none" id="provincebox">
+        <section class="fl-left arealeveltit">全省</section>
+        <ul class="fl-left areadetail">
+            <li class="arealiback"></li>    
+            <li class="realarea">
+                 <!--这里显示出省-->
+            </li>    
+        </ul>
+    </section>
+    <section class="areabox none" id="citybox">
+        <section class="fl-left arealeveltit"></section>
+        <ul class="fl-left areadetail">
+            <li class="arealiback">
+               <p class="konghang" >
+                    <a class="arealia " id="backprovince">返回上一级</a>
+                </p>
+            </li>
+            <li class="realarea">
+                <!--这里显示出市-->
+            </li>    
+        </ul>
+    </section>
+    <section class="areabox none" id="regionbox">
+        <section class="fl-left arealeveltit"></section>
+        <ul class="fl-left areadetail">
+            <li class="arealiback">
+                 <p class="konghang" >
+                    <a class="arealia" id="backcity">返回上一级</a>
+                </p>
+            </li>
+            <li class="realarea">
+                 <!--这里显示出区-->
+            </li>    
+        </ul>
+    </section>
+</section>
+<ul class="shoplist-box none">	
+	<li class="shoplist-item">
+		<section class="fl-left shop-left">
+			<p class="shop-name">宁波新然零件店</p>
+			<p class="shop-address">鄞州区高桥镇学院路866号</p>
+		</section>
+		<section class="fl-right clearfix shop-right">
+			<a class="fl-left edit"><img src="assets/images/bodadianhua.png"/></a>				
+		</section>
+	</li>
+	<li class="shoplist-item">
+		<section class="fl-left shop-left">
+			<p class="shop-name">宁波新然零件店</p>
+			<p class="shop-address">鄞州区高桥镇学院路866号</p>
+		</section>
+		<section class="fl-right clearfix shop-right">
+			<a class="fl-left edit"><img src="assets/images/bodadianhua.png"/></a>				
+		</section>
+	</li>
+	<li class="shoplist-item">
+		<section class="fl-left shop-left">
+			<p class="shop-name">宁波新然零件店</p>
+			<p class="shop-address">鄞州区高桥镇学院路866号</p>
+		</section>
+		<section class="fl-right clearfix shop-right">
+			<a class="fl-left edit"><img src="assets/images/bodadianhua.png"/></a>				
+		</section>
+	</li>
+	<li class="shoplist-item">
+		<section class="fl-left shop-left">
+			<p class="shop-name">宁波新然零件店</p>
+			<p class="shop-address">鄞州区高桥镇学院路866号</p>
+		</section>
+		<section class="fl-right clearfix shop-right">
+			<a class="fl-left edit"><img src="assets/images/bodadianhua.png"/></a>				
+		</section>
+	</li>	
+</ul>
+<script type="text/javascript">
+$('.dealerfirstchoose')[0].onclick=function(){//点击地区按钮
+    if($('.dealerfirstchoose').html()=="地区"){
+        $('#provincebox').show();
+        $('.dealerfirstchoose').html("关闭")
+    }
+    else if($('.dealerfirstchoose').html()=="关闭"){
+        $('.areabox').hide();
+         $('.dealerfirstchoose').html("地区")
+          $('#repairpostion').val("");
+    }
+
+    else if($('.dealerfirstchoose').html()=="切换"){
+            $('#provincebox').show();
+            $('#repairpostion').val("");
+            $('.dealerfirstchoose').html("关闭");
+            $('.shoplist-box').hide();
+            $('#dealersbottom2').hide()
+
+    }
+}
+
+
+	$.ajax({
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/querySmartEvArea.json',
+        type:'post',
+        data:{areaId:0},
+        success:function(data){
+            if(data.areaDTOs.length==0){
+        }
+        else{
+            var html=''
+            $.each(data.areaDTOs,function(i,item){
+                html+=` <li class="areali"  data-proname="${item.areaName}" data-proid="${item.areaId}">${item.areaName}</li>`
+            })
+            $('#provincebox .areadetail').html(html)//该步骤显示所有的省和直辖市
+        }
+    }
+}) 
+var  proid,proname
+$(function(){
+  $('#provincebox').on({//点击某一个省的按钮显示所选省的所有市
+    click:function(){
+    $(this).addClass('visited'); 
+    $(this).siblings().removeClass('visited')
+    $('#citybox').show(); 
+    $('#provincebox').hide();
+    proid=$(this).data('proid');
+    proname=$(this).data('proname')
+    $.ajax({
+        url:'http://smartev.sunruncn.com:8080/SmartEv/rest/querySmartEvArea.json',
+        type:'post',
+        data:{areaId:proid},
+        success:function(data){
+            var html=''
+            $.each(data.areaDTOs,function(i,item){
+                html+=` <li class="areali" data-cityid="${item.areaId}" data-cityname="${item.areaName}">${item.areaName}</li>`;               
+            })
+            $('#citybox .realarea').html(html);
+            $('#repairpostion').val(proname);
+            $('.arealeveltit').html(proname);
+              $('#backprovince').click(function(){ 
+                $('#citybox').hide(); 
+                $('#provincebox').show();
+            })      
+        } 
+
+    })               
+  }
+  },'.areali')  
+})
+ var cityid,cityname
+ $('#citybox').on({//点击市显示所选市的所有区
+        click:function(){
+        $(this).addClass("visited");
+        $(this).siblings().removeClass('visited') 
+        $('#regionbox').show(); 
+        $('#citybox').hide();
+        cityid=$(this).data('cityid');
+        cityname=$(this).data('cityname');
+        $('.arealeveltit').html(cityname);
+        $.ajax({
+            url:'http://smartev.sunruncn.com:8080/SmartEv/rest/querySmartEvArea.json',
+            type:'post',
+            data:{areaId:cityid},
+            success:function(data){
+                var html=''
+                $.each(data.areaDTOs,function(i,item){
+                    html+=` <li class="areali" data-regionid="${item.areaId}" data-regionname="${item.areaName}">${item.areaName}</li>`
+                })
+                $('#regionbox .realarea').html(html);
+                $('#repairpostion').val($('#repairpostion').val()+cityname)
+                $('#backcity').click(function(){ 
+                    $('#regionbox').hide(); 
+                    $('#citybox').show();
+                    $('#repairpostion').val(proname)
+                })              
+           
+            }
+
+        })               
+
+  }
+  },'.areali')
+
+
+ $('#regionbox ').on({//点击区获取完整地址传到input，并呈现相应的维修点
+        click:function(){
+        $('#regionbox').hide(); 
+        $('.shoplist-box').show();
+        var regionname=$(this).data('regionname');
+        $('#repairpostion').val($('#repairpostion').val()+regionname)
+        var regionid= $(this).data('regionid');
+        var regionname= $(this).data('regionname'); 
+        var appendProHtml=function(res,_obj){
+            $.each(res.infoDTO,function(i,item){
+                _obj.append(`<li class="shoplist-item">
+								<section class="fl-left shop-left">
+									<p class="shop-name">${item.shopName}</p>
+									<p class="shop-address">${item.shopAddress}</p>
+								</section>
+								<section class="fl-right clearfix shop-right">
+									<a class="fl-left edit"><img src="assets/images/bodadianhua.png"/></a>				
+								</section>
+							</li>`);       
+            })
+            };
+        var argument={
+            'url'      : 'http://smartev.sunruncn.com:8080/SmartEv/rest/as/maintenanceShop.json',
+            'res'      : {userId:5,pageSize:20,provinceId:proid,cityId:cityid,districtId:regionid,pageNo:1},
+            'success'  : appendProHtml,
+            'mainbox'  : $('.shoplist-box')  
+        }
+
+$(function(){
+    addData(argument);
+})
+$('.dealerfirstchoose').html("切换")
+
+  }
+
+  },'.areali')
+
+
+
+</script>
+</body>
+</html>

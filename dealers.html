@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>经销商</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lArea.css">
+    <script type="text/javascript" src="assets/js/mobile.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+    <script type="text/javascript" src="assets/js/lArea.js"></script> 
+    <script type="text/javascript" src="assets/js/area.js"></script>
+</head>
+<body>
+<section class="form-group">
+    <section class="input-w">省<select></select></section>
+    <section class="input-w">市<select ></select></section>
+    <section class="input-w">区<select></select></section>
+</section>
+
+<section class="form-group choosebill margin-t-40 none" id="choosedealers">
+    <section class="input-w">天一xxx经销商<input type="radio" class="input_check" id="checkone" checked="checked" name="dealers"><label  class="labelpay" for="checkone"></label></section>
+    <section class="input-w">天一xxxxxx经销商<input type="radio" class="input_check" id="checktwo" name="dealers"><label class="labelpay" for="checktwo"></label></section>
+</section>  
+<section class="form-group choosebill margin-t-40 none" id="nofounddealers">
+    <section class="input-w">经销商<input placeholder="请输入经销商名称" id="dealername" style="text-align: right;" /></section>
+</section>  
+<section class="registbottom" id="dealersbottom1">
+    <a id="found" class="confirmregist">筛选</a>
+</section>
+
+<section class="registbottom none" id="dealersbottom3">
+    <a class="confirmregist" href="payment.html" >完成</a>
+</section>
+<section class="registbottom dealersbottom none" id="dealersbottom2">
+    <a class="notfound fl-left" id="nofound">未筛选到</a>
+    <a class="complete fl-left" id="completefound" href="payment.html">完成</a>
+</section>
+<script type="text/javascript">
+    $("#found").click(function(){
+        $("#dealersbottom1").hide()
+        $("#dealersbottom2").show()
+        $("#choosedealers").show();
+        $("#nofound").click(function(){
+             $("#choosedealers").hide()
+              $("#nofounddealers").show()
+              $("#dealersbottom2").hide()
+             $("#dealersbottom3").show()
+        })
+    })
+</script>
+<script type="text/javascript">_init_area();</script>
+<script>
+
+</script>
+</body>
+</html>

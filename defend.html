@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>防护</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+  <style type="text/css">
+  #div1{
+        width: 0.85rem;
+        height: 0.5rem;
+        border-radius: 0.25rem;
+        position: relative;
+        position: absolute;
+        left: 5.2rem;
+        top:0.7rem;
+    }
+    #div2{
+        width: 0.48rem;
+        height:0.48rem;
+        border-radius:0.24rem;
+        position: absolute;
+        background: white;
+        box-shadow: 0rem 0.01rem 0.02rem rgba(0,0,0,0.4);
+    }
+    .open1{
+        background: rgba(0,184,0,0.8);
+    }
+    .open2{
+        top: 0.01rem;
+        right: 0.005rem;
+    }
+    .close1{
+        background: rgba(255,255,255,0.4);
+        border:0.015rem solid rgba(0,0,0,0.15);
+        border-left: transparent;
+    }
+    .close2{
+        left: 0rem;
+        top: 0rem;
+        border:0.01rem solid rgba(0,0,0,0.1);
+    }</style>
+</head>
+<body>
+   <section class="defendwindow">
+        <img src="assets/images/fanghumap.jpg">
+   </section>
+
+   <section class="defendbox">
+        <section class="tit">
+        <img class="defendtitimg" src="assets/images/shezhi.png" />
+        设置电子围栏
+        </section>
+        <p class="defendlength">50m</p>
+    <div id="div1" class="open1">
+        <div id="div2" class="open2"></div>
+    </div>
+
+   </section>
+   <script type="text/javascript">
+   window.onload=function(){
+        var div2=document.getElementById("div2");
+        var div1=document.getElementById("div1");
+        div2.onclick=function(){
+          div1.className=(div1.className=="close1")?"open1":"close1";
+          div2.className=(div2.className=="close2")?"open2":"close2";
+        }
+    }</script>
+
+</body>
+</html>

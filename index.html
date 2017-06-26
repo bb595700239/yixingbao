@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>易行保首页</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dialog.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="assets/js/dialog.js"></script>
+	<script type="text/javascript" src="assets/js/rem.js"></script>
+	<script type="text/javascript" src="assets/js/mobile.js"></script>
+</head>
+<body>
+	<nav class="nav">
+		<a class="nav_extension" href="#"> 
+			 <img src="assets/images/cebianlan.png">
+		</a>
+		<span>のe电动车</span>
+		<a class="setting_btn none" href="#" >
+			<img src="assets/images/dianlianglicheng.png">
+		</a>
+<!-- 侧边栏开始 -->
+		<section class="broadside none" >
+			<i class="jiao"></i>
+			<section class="usertel">1376669999</section>
+			<a href="devicelist.html"><section class="broadside-item"><img  class="broadsideicon fl-left" src="assets/images/shebeiliebiao.png" /><span class="fl-left">设备列表</span><img class="fl-left arrow" src="assets/images/youjiantou3.png" /></section></a>
+			<a href="installinstructions.html"><section class="broadside-item"><img  class="broadsideicon fl-left" src="assets/images/anzhuangshuoming.png" /><span class="fl-left">安装说明</span><img class="fl-left arrow" src="assets/images/youjiantou3.png" /></section></a>
+			<a href="about.html"><section class="broadside-item"><img  class="broadsideicon fl-left" src="assets/images/guanyuwomen.png" /><span class="fl-left">关于我们</span><img class="fl-left arrow" src="assets/images/youjiantou3.png" /></section></a>
+			<a href="login.html"><section  class="broadside-item margin-t-80"><img class="broadsideicon fl-left" src="assets/images/tuichudenglu.png" /><span class="fl-left exitlogin">退出登录</span></section></a>
+		</section>
+	</nav>
+<script type="text/javascript">
+	$('.nav_extension').click(function(){
+		if($('.broadside').css('display')=="none"){
+			$('.broadside').show();
+		}
+		else{
+			$('.broadside').hide();
+		}		
+	})
+</script>
+<!-- 	侧边栏结束 -->
+<!-- 绑定 -->
+<section class="curnoequipment" >
+	<p class="noequtit">当前暂无任何设备</p>
+	<a class="pleasebind" id="bd" > 
+		<img class="fl-left" src="assets/images/qingbangding.png">
+		<span class="fl-left">请绑定</span>
+	</a>
+</section>
+<!-- banner -->	
+<section class="bannerbox none">
+	<section class="swiper-container" id="banner" >
+		<ul class="banner swiper-wrapper">
+			
+		</ul>
+		<div class="swiper-pagination"></div>
+	</section>
+<!-- 绑定的电动车状态 -->		
+	<ul class="situation none">
+		<li class="dianliang"></li>  
+		<li class="soc fl-left">当前剩余电量：<p class="num" id="electricity">0<span class="unit">%</span></p></li>
+		<li class="cycling fl-left">总骑行里程（km）<p class="num" id="totalDistance">9999</p></li>
+	</ul>
+</section>
+<script type="text/javascript">
+$('#bd').click(function(){
+	$('.mask').css("top","0px");
+	$('.shanchu').click(function(){
+	   	$('.mask').css("top","-100%");
+	});
+});
+$('.setting_btn').click(function(){
+	if($('.situation').css('display')=='none'){
+		$('#banner').hide();
+		$('.situation').show();
+	}
+	else{
+		$('#banner').show()
+		$('.situation').hide();
+	}
+	
+
+})
+$.ajax({
+		url:'http://smartev.sunruncn.com:8080/SmartEv/rest/qt/getSlideShowImg.json',
+		type:'post',
+		success:function(data){
+			var $img='';
+			$.each(data.slideShowImgList,function(i,item){
+				$img+=`
+				<li class="swiper-slide">
+					<img class="bannerimg" src="http://smartev.sunruncn.com:8080${item.slideImage}">
+				</li>`
+			})
+			$('.banner').html($img)
+		}
+})
+$.bike={
+	show:function(){
+		$(".bannerbox").show();
+		$('.setting_btn').show();
+		$('.curnoequipment').hide();
+		var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true     
+		    });
+		
+	},
+	hide:function(){
+		$(".bannerbox").hide();
+		$('.setting_btn').hide();
+		$('.curnoequipment').show();
+	}
+}
+$.banner={
+	show:function(){
+		$(".situation").hide()
+		$("#banner").show()
+
+	},
+	hide:function(){
+		$(".situation").show()
+		$("#banner").hide()
+	}
+}
+$.ajax({
+	url:'http://smartev.sunruncn.com:8080/SmartEv/rest/ev/queryDeviceByUserList.json',//一进入首页判断设备有无，有显示绑定设备，无显示请求绑定
+	type:'post',
+	data:{userId:5},
+	success:function(data){
+		if (data.deviceUserDTOs.length==0) {//
+			$.bike.hide()
+		}else{
+			$.bike.show()
+			$.each(data.deviceUserDTOs,function(i,item){
+				if(item.isIndexDevice){
+					alert('当前绑定设备序列号为：'+item.deviceMark);
+					$('#electricity').html(item.electricity);
+					$('#totalDistance').html(item.totalDistance);
+
+
+
+				}
+			})
+		}
+	},error:function(){
+	        $.alert('系统繁忙，请稍后再试');	
+		}
+})
+</script>
+<!-- 蒙版开始 -->
+<!-- 蒙版结束 -->
+<!-- 弹窗开始 -->
+<section class="mask" id="mask2" style="top:-100%;">
+    <section class="pupwindow ">
+        <a class="shanchu"><img  class="shanchuimg" src="assets/images/shanchu.png"/></a>
+        <p class="puptit">添加设备</p>
+        <p class="puplabel"><i class="red">*</i>设备序列号</p>
+        <section class="pupinput">
+            <input class="serialnumber" placeholder="请输入设备序列号" id="addserialnumber" />
+        </section>
+        <p class="puplabel"><i class="red">*</i>档次电压</p>
+        <ul class="pupvoltage">
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage1"/><label class="voltagechosse" for="voltage1">48V</label></li>
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage2"/><label class="voltagechosse" for="voltage2">60V</label></li>
+            <li class="pupvoltageitem"><input type="radio" name="voltage" id="voltage3"/><label class="voltagechosse" for="voltage3">72V</label></li>
+        </ul>
+        <p class="puplabel">设备名称</p>  
+        <section class="pupinput">
+        <input class="devicename" placeholder="请输入设备名称" id="adddevicename" />
+        </section>
+        <section class="pupbottom">
+            <!-- <a id="pupcencel" class="pupcencel fl-left">取消</a> -->
+            <a id="pupadd" class="pupadd">确认</a>
+        </section>
+    </section>
+</section>
+<!-- 弹窗结束 -->
+<!-- 绑定结束 -->
+	<section class="function" >
+		<section class="functionup">
+				<a href="position.html"> <img  class="function-icon" src="assets/images/dingwei.png"/>定位</a>
+				<a href="#"> <img  class="function-kaiguan" src="assets/images/kaiguan.png"/>远程控制</a>
+				<a href="message.html"> <img  class="function-icon" src="assets/images/xiaoxi.png"/>消息</a>
+		</section>
+		<section class="functiondown">
+				<a href="defend.html"> <img  class="function-icon" src="assets/images/fanghu.png"/>防护</a>
+				<a href="shop.html"> <img  class="function-icon" src="assets/images/shangcheng.png"/>商城</a>
+				<a href="insurancefirst.html"> <img  class="function-icon" src="assets/images/zonghebaoxian.png"/>综合保险</a>
+		</section>
+	</section>
+	<section class="shouhou  fl-left">
+		<i class="fl-left"><img src="assets/images/shouhoufuwu.png"></i>
+		<span class="fl-left">售后服务</span>
+	</section>
+	<section class="index-bottom fl-left">
+		<ul class=clearfix>
+			<li>
+				<a><p class="usertelnumber">1376669999<p><span>平台客服</span></a>
+			</li>
+			<li>
+				<a href="repair.html"><img src="assets/images/diandongchebaoxiu.png"><span>电动车报修</span></a>
+			</li>
+			<li>
+				<a href="complaints.html"><img src="assets/images/tousujianyi.png"><span>投诉建议</span></a>
+			</li>
+		</ul>
+	</section>
+ <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+</body>
+</html>
